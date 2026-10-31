@@ -11,7 +11,8 @@ pipeline {
                 sh 'mkdir /var/jenkins_home/app-web'               
             }
         }
-        stage('Drop the containers'){   
+        stage('Drop the containers'){
+            failFast true
             parallel{ 
                 stage('Drop apache container'){
                     steps {
